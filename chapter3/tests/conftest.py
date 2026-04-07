@@ -12,6 +12,14 @@ os.environ["AWS_DEFAULT_REGION"] = "ap-northeast-1"
 os.environ["TABLE_NAME"] = "orders"
 
 
+@pytest.fixture(autouse=True)
+def _clear_dependency_cache():
+    from app.dependencies import get_order_repository
+    get_order_repository.cache_clear()
+    yield
+    get_order_repository.cache_clear()
+
+
 @pytest.fixture
 def dynamodb_table():
     with mock_aws():

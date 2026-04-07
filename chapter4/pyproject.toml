@@ -16,7 +16,7 @@ dev = [
     "pytest-cov>=7.1.0",
 ]
 
-[tool.pytest.ini_options]
+[tool.pytest]
 testpaths = ["tests"]
 pythonpath = ["src"]
-addopts = "--cov=src --cov-report=term-missing"
+addopts = ["--cov=src", "--cov-report=term-missing"]
