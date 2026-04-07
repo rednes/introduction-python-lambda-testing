@@ -7,6 +7,7 @@ DynamoDB のモックには moto を使います。
 
 ```bash
 cd chapter1
+uv sync --dev
 uv run pytest
 ```
 

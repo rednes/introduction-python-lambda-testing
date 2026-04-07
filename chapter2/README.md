@@ -7,6 +7,7 @@ moto を使わず pytest だけで動かせる構成です。
 
 ```bash
 cd chapter2
+uv sync --dev
 uv run pytest
 ```
 

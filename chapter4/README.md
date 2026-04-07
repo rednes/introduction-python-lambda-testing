@@ -7,6 +7,7 @@ DynamoDB の `ClientError` はドメイン例外に変換して上位層に漏�
 
 ```bash
 cd chapter4
+uv sync --dev
 uv run pytest
 ```
 

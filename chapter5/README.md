@@ -7,6 +7,7 @@ Gateway 層でインフラ例外をドメイン例外に変換する Anticorrupt
 
 ```bash
 cd chapter5
+uv sync --dev
 uv run pytest
 ```
 

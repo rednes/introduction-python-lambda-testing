@@ -1,12 +1,13 @@
-# Chapter 3 — ウォームスタート対応の設計
+# Chapter 3 — リポジトリ層を moto でテストする
 
-環境変数をモジュールレベルで読み込み、Lambda のコールドスタートを最適化します。
-未設定の環境変数を起動時に即座に検出するフェイルファスト設計も合わせて導入します。
+Chapter 2 の MagicMock だけでは確認できない DynamoDB 操作の正しさを、moto で検証します。
+ユースケース・コントローラー層は MagicMock のまま、リポジトリ層だけ moto に切り替える構成です。
 
 ## テストの実行
 
 ```bash
 cd chapter3
+uv sync --dev
 uv run pytest
 ```
 
