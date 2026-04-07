@@ -1,0 +1,21 @@
+# chapter5: 外部API呼び出しのモック
+
+[project]
+name = "chapter5"
+version = "1.0.0"
+description = "chapter5: 外部API呼び出しのモック"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = ["requests>=2.33.1"]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.1.0",
+    "responses>=0.26.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "--cov=src --cov-report=term-missing"

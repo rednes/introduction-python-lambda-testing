@@ -1,0 +1,22 @@
+# chapter1: テスタブルな設計の基本
+
+[project]
+name = "chapter1"
+version = "1.0.0"
+description = "chapter1: テスタブルな設計の基本"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []
+
+[dependency-groups]
+dev = [
+    "boto3>=1.42.83",
+    "moto[dynamodb]>=5.1.22",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.1.0",
+]
+
+[tool.pytest]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = ["--cov=src", "--cov-report=term-missing"]
