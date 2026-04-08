@@ -9,17 +9,17 @@ on:
 jobs:
   test:
     runs-on: ubuntu-slim
-    strategy:
-      matrix:
-        chapter: [chapter1, chapter2, chapter3, chapter4, chapter5]
     steps:
       - uses: actions/checkout@v6
       - uses: astral-sh/setup-uv@v8.0.0
-        with:
-          cache-suffix: ${{ matrix.chapter }}
       - name: Run tests
-        working-directory: ${{ matrix.chapter }}
         run: |
           uv python install 3.13
-          uv sync --dev
-          uv run pytest
+          for chapter in chapter1 chapter2 chapter3 chapter4 chapter5; do
+            echo "::group::${chapter}"
+            cd "${chapter}"
+            uv sync --dev
+            uv run pytest
+            cd ..
+            echo "::endgroup::"
+          done
