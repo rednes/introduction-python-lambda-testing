@@ -55,3 +55,15 @@ cd chapterN
 uv sync --dev
 uv run pytest
 ```
+
+## GitHub Actions のローカル実行
+
+[act](https://github.com/nektos/act) を使って、GitHub Actions ワークフローをローカルで実行できます。
+
+```bash
+# インストール（macOS）
+brew install act
+
+# 実行
+act push -P ubuntu-slim=catthehacker/ubuntu:act-latest
+```
